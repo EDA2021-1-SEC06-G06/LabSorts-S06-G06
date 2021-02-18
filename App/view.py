@@ -44,6 +44,15 @@ def printMenu():
     print("5 - Ordenar los libros por rating")
     print("0- Salir")
 
+def printResults(ord_books, sample=10):
+    size = lt.size(ord_books)
+    if size > sample:
+        print("Los primeros ", sample, " libros ordenados son:")
+        i = 0
+        while i <= sample:
+            book = lt.getElement(ord_books, i)
+            print("Titulo: " + book["title"] + "   ISBN:   " + book["isbn"] + "Rating: " + book["average_rating"])
+            i += 1
 
 def initCatalog():
     """
@@ -117,8 +126,9 @@ while True:
         size = input("Indique tamaño de la muestra: ")
         result = controller.sortBooks(catalog, int(size))
         print("Para la muestra de", size, " elementos, el tiempo (mseg) es: ",
-                                          str(result))
-
+                                          str(result[0s]))
+        printResults(result[1])
+  
     else:
         sys.exit(0)
 sys.exit(0)
