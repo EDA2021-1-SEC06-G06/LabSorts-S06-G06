@@ -126,7 +126,7 @@ while True:
         size = input("Indique tamaño de la muestra: ")
         result = controller.sortBooks(catalog, int(size))
         print("Para la muestra de", size, " elementos, el tiempo (mseg) es: ",
-                                          str(result[0s]))
+                                          str(result[0]))
         printResults(result[1])
   
     else:
